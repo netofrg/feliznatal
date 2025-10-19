@@ -1,0 +1,477 @@
+/* Fontes importadas no HTML: 'Inter', 'Satisfy' */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Variáveis de Cores e Efeitos */
+:root {
+    --cor-primaria: #cd3c32;
+    --cor-secundaria: #f2e3e6;
+    --cor-texto-escuro: #121214;
+    --cor-texto-claro: #ffffff;
+    --cor-btn-bg: #cd3c32;
+    --cor-btn-text: #ffffff;
+    --sombra-suave: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    --transicao-suave: 0.3s ease-in-out; 
+}
+
+/* Estilos Globais */
+body {
+    font-family: "Archivo", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-texto-escuro);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NOVO ESTILO: Para a cor destacada no título principal */
+.highlight {
+    color: var(--cor-primaria);
+}
+
+/* EFEITOS NO BOTÃO CTA */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-btn-bg);
+    color: var(--cor-btn-text);
+    padding: 12px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transicao-suave);
+}
+
+.btn:hover {
+    background-color: #8c1e2e;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(167, 35, 56, 0.4);
+}
+
+/* Seção 1 - Destaque Superior */
+.hero-section {
+    background-color: var(--cor-secundaria);
+    padding: 80px 0;
+    margin-bottom: 50px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.hero-text:hover {
+    box-shadow: var(--sombra-suave);
+    transform: translateY(-3px); 
+}
+
+.hero-text .tag {
+    font-family: 'Satisfy', cursive;
+    color: var(--cor-primaria);
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    /* A cor base será o preto do corpo. Apenas o destaque fica vermelho. */
+    color: var(--cor-texto-escuro); 
+    margin: 0 0 15px 0;
+}
+
+.hero-text p {
+    max-width: 450px;
+    margin-bottom: 25px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+/* Placeholder para a Imagem 1 */
+.image-placeholder-1 {
+    width: 100%;
+    max-width: 500px; 
+    height: 300px; 
+    background-image: url(../feliznatal/templates/imagens/imagem.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform var(--transicao-suave);
+}
+.hero-image:hover .image-placeholder-1 {
+    transform: scale(1.03); 
+}
+
+/* Seção 2 - Contagem Regressiva */
+.timer-section {
+    text-align: center;
+    padding: 50px 0;
+    transition: background-color var(--transicao-suave);
+}
+
+.timer-section:hover {
+    background-color: rgba(242, 227, 230, 0.1);
+}
+
+.timer-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timer-section p {
+    margin-bottom: 30px;
+}
+
+.countdown {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    margin-bottom: 50px;
+    line-height: 1;
+    text-shadow: 1px 1px 3px rgba(167, 35, 56, 0.2); 
+}
+
+/* Placeholder para a Imagem 2 */
+.image-placeholder-2 {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    background-image: url(../feliznatal/templates/imagens/illustration-1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Seção 3 - Destaque Inferior */
+.generosity-section {
+    padding: 80px 0;
+}
+
+.generosity-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-direction: row-reverse; 
+}
+
+.generosity-image {
+    flex: 1;
+    text-align: left;
+}
+
+/* Placeholder para a Imagem 3 */
+.image-placeholder-3 {
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    background-image: url(../feliznatal/templates/imagens/illustration.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform var(--transicao-suave);
+}
+.generosity-image:hover .image-placeholder-3 {
+    transform: scale(1.03); 
+}
+
+.generosity-text {
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.generosity-text:hover {
+    box-shadow: var(--sombra-suave);
+    transform: translateY(-3px); 
+}
+
+.generosity-text h2 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+}
+
+.generosity-text p {
+     max-width: 500px;
+     margin-bottom: 25px;
+}
+
+/* Rodapé */
+.footer {
+    background-color: var(--cor-secundaria);
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    font-family: 'Satisfy', cursive;
+    color: var(--cor-primaria);
+    font-size: 20px;
+}
+
+/* EFEITOS NOS ÍCONES DO RODAPÉ */
+.social-icons a {
+    color: var(--cor-texto-escuro);
+    font-size: 18px;
+    margin-left: 15px;
+    transition: color var(--transicao-suave), transform var(--transicao-suave);
+}
+
+.social-icons a:hover {
+    color: var(--cor-primaria);
+    transform: scale(1.2); 
+}
+
+/* ======================== */
+/* ESTILOS DO MODAL CRUD */
+/* ======================== */
+
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
+}
+
+#donation-modal.open {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-texto-escuro);
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+#donation-modal.open .modal-content {
+    transform: scale(1);
+}
+
+.modal-content.crud-modal {
+    max-width: 700px;
+}
+
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header h2 {
+    color: var(--cor-primaria);
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.modal-body {
+    padding-top: 10px;
+}
+
+/* Estilos do Formulário */
+#donor-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+#donor-form .btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
+
+/* Estilos da Tabela */
+.table-container {
+    overflow-x: auto; 
+}
+
+#donors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#donors-table th, #donors-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; 
+}
+
+#donors-table th {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    font-weight: 600;
+}
+
+#donors-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+#donors-table td button {
+    background: none;
+    border: none;
+    color: var(--cor-primaria);
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+#donors-table td button:hover {
+    color: #000;
+}
+
+.clear-btn {
+    background-color: #777;
+    transition: background-color 0.3s;
+    padding: 8px 15px;
+    font-size: 12px;
+}
+.clear-btn:hover {
+    background-color: #555;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ======================== */
+/* RESPONSIVIDADE (IMAGENS CORRIGIDAS) */
+/* ======================== */
+
+@media (max-width: 900px) {
+    .hero-content,
+    .generosity-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text, .generosity-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-text p, .generosity-text p {
+        max-width: 80%; 
+    }
+
+    .hero-image,
+    .generosity-image {
+        text-align: center;
+        margin-top: 30px;
+        width: 100%; 
+    }
+    
+    .generosity-content {
+        flex-direction: column-reverse; 
+    }
+    
+    .image-placeholder-1,
+    .image-placeholder-3 {
+        /* CORREÇÃO PARA EXIBIÇÃO DA IMAGEM DE FUNDO EM MOBILE */
+        width: 100%;
+        max-width: 90%; 
+        height: 250px; /* Garante altura para a imagem de fundo aparecer */
+        margin: 0 auto; /* Centraliza o placeholder */
+    }
+
+    .countdown {
+        font-size: 40px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .modal-content.crud-modal {
+        margin: 20px auto;
+        width: 95%;
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 600px) {
+     .hero-text h1, .generosity-text h2 {
+        font-size: 28px;
+    }
+}

@@ -6,286 +6,17 @@
     <title>Feliz Natal - Plataforma de Doação</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Variáveis de Cores */
-        :root {
-            --cor-primaria: #a72338;
-            --cor-secundaria: #f2e3e6;
-            --cor-texto-escuro: #000000;
-            --cor-texto-claro: #ffffff;
-            --cor-btn-bg: #a72338;
-            --cor-btn-text: #ffffff;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        /* Estilos Globais */
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--cor-texto-claro);
-            color: var(--cor-texto-escuro);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--cor-btn-bg);
-            color: var(--cor-btn-text);
-            padding: 12px 25px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 600;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #8c1e2e;
-        }
-
-        /* Seção 1 - Destaque Superior */
-        .hero-section {
-            background-color: var(--cor-secundaria);
-            padding: 80px 0;
-            margin-bottom: 50px;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-text .tag {
-            font-family: 'Satisfy', cursive;
-            color: var(--cor-primaria);
-            font-size: 24px;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .hero-text h1 {
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--cor-primaria);
-            margin: 0 0 15px 0;
-        }
-        
-        .hero-text p {
-            max-width: 450px;
-            margin-bottom: 25px;
-        }
-
-        .hero-image {
-            flex: 1;
-            text-align: right;
-        }
-
-        /* Placeholder para a Imagem 1 */
-        .image-placeholder-1 {
-            width: 100%;
-            max-width: 500px; /* Ajuste conforme a imagem original */
-            height: 300px; /* Altura aproximada da imagem original */
-            background-color: #fcebeb; /* Cor de fundo para o placeholder */
-            background-image: url('placeholder-loja.png'); /* Sua imagem real aqui */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            /* Se for usar a imagem, remova background-color e ajuste a imagem */
-        }
-        
-        /* Seção 2 - Contagem Regressiva */
-        .timer-section {
-            text-align: center;
-            padding: 50px 0;
-        }
-
-        .timer-section h2 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .timer-section p {
-            margin-bottom: 30px;
-        }
-
-        .countdown {
-            font-size: 60px;
-            font-weight: 700;
-            color: var(--cor-primaria);
-            margin-bottom: 50px;
-            line-height: 1;
-        }
-        
-        /* Placeholder para a Imagem 2 */
-        .image-placeholder-2 {
-            width: 100%;
-            max-width: 400px;
-            height: 250px;
-            margin: 0 auto;
-            background-color: #f0f0f0;
-            background-image: url('placeholder-presentes.png'); /* Sua imagem real aqui */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* Seção 3 - Destaque Inferior */
-        .generosity-section {
-            padding: 80px 0;
-        }
-
-        .generosity-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            flex-direction: row-reverse; /* Inverte a ordem para imagem à esquerda */
-        }
-
-        .generosity-image {
-            flex: 1;
-            text-align: left;
-        }
-        
-        /* Placeholder para a Imagem 3 */
-        .image-placeholder-3 {
-            width: 100%;
-            max-width: 450px;
-            height: 350px;
-            background-color: #fcebeb;
-            background-image: url('placeholder-bola.png'); /* Sua imagem real aqui */
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-        
-        .generosity-text {
-            flex: 1;
-        }
-
-        .generosity-text h2 {
-            font-size: 36px;
-            font-weight: 700;
-            line-height: 1.2;
-            margin: 0 0 15px 0;
-        }
-        
-        .generosity-text p {
-             max-width: 500px;
-             margin-bottom: 25px;
-        }
-
-        /* Rodapé */
-        .footer {
-            border-top: 1px solid #eee;
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-logo {
-            font-family: 'Satisfy', cursive;
-            color: var(--cor-primaria);
-            font-size: 20px;
-        }
-
-        .social-icons a {
-            color: var(--cor-texto-escuro);
-            font-size: 18px;
-            margin-left: 15px;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: var(--cor-primaria);
-        }
-
-        /* Responsividade */
-        @media (max-width: 900px) {
-            .hero-content,
-            .generosity-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-text, .generosity-text {
-                /* Centraliza o texto no modo coluna */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .hero-text p, .generosity-text p {
-                max-width: 80%; /* Aumenta a largura em telas menores */
-            }
-
-            .hero-image,
-            .generosity-image {
-                text-align: center;
-                margin-top: 30px;
-            }
-            
-            .generosity-content {
-                flex-direction: column-reverse; /* Mantém a ordem original da seção */
-            }
-            
-            .image-placeholder-1,
-            .image-placeholder-3 {
-                max-width: 80%;
-                height: 250px;
-            }
-
-            .countdown {
-                font-size: 40px;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-            }
-            
-            .footer-logo {
-                margin-bottom: 10px;
-            }
-        }
-
-        @media (max-width: 600px) {
-             .hero-text h1, .generosity-text h2 {
-                font-size: 28px;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <section class="hero-section">
         <div class="container hero-content">
             <div class="hero-text">
-                <span class="tag">🎅 Feliz Natal</span>
+                <span class="tag"><img src="../feliznatal/templates/imagens/logo.svg"></span>
                 <h1>
-                    Uma plataforma de doação <br> para espalhar alegria
+                    Uma <span class="highlight">plataforma de doação</span> <br> para espalhar alegria
                 </h1>
                 <p>
                     Nessas festas de fim de ano mande um presente para a pessoa amada e compartilhe a alegria do Natal.
@@ -293,8 +24,7 @@
                 <a href="#" class="btn">Fazer uma Doação</a>
             </div>
             <div class="hero-image">
-                <div class="image-placeholder-1">
-                    </div>
+                <div class="image-placeholder-1"></div>
             </div>
         </div>
     </section>
@@ -307,15 +37,13 @@
         <div class="countdown">
             10d -24h - 01m - 52s
         </div>
-        <div class="image-placeholder-2">
-            </div>
+        <div class="image-placeholder-2"></div>
     </section>
 
     <section class="generosity-section container">
         <div class="generosity-content">
             <div class="generosity-image">
-                <div class="image-placeholder-3">
-                    </div>
+                <div class="image-placeholder-3"></div>
             </div>
             <div class="generosity-text">
                 <h2>
@@ -324,7 +52,7 @@
                 <p>
                     Celebre a magia do Natal de uma maneira especial! Descubra a plataforma que permite a doação de presentes significativos para aqueles que mais precisam. Faça parte do movimento e compartilhe o verdadeiro espírito da generosidade.
                 </p>
-                <a href="#" class="btn">Fazer uma Doação</a>
+                 <a href="#" class="btn">Fazer uma Doação</a>
             </div>
         </div>
     </section>
@@ -332,17 +60,272 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-logo">
-                🎅 Feliz Natal
+                <img src="../feliznatal/templates/imagens/logo.svg">
             </div>
             <div class="social-icons">
-                <a href="#" aria-label="Whatsapp"><i class="fab fa-whatsapp"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-                <a href="#" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.twitter.com.br" class="tag-link">
+                <img src="../feliznatal/templates/imagens/logo-twitter.svg">
+                </a>
+                <a href="https://whatsapp.com.br">
+                <img src="../feliznatal/templates/imagens/logo-whatsapp.svg">
+                </a>
+                <a href="https://instagram.com">
+                <img src="../feliznatal/templates/imagens/logo-instagram.svg">
+                </a>
+                <a href="facebook.com">
+                <img src="../feliznatal/templates/imagens/logo-facebook.svg">
+                </a>
+                <a href="google.com.br">
+                <img src="../feliznatal/templates/imagens/logo-google.svg">
+                </a>
             </div>
         </div>
     </footer>
+    
+    <div id="donation-modal" class="modal-overlay">
+        <div class="modal-content crud-modal">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+
+            <div class="modal-header">
+                <h2>Gerenciamento de Doadores</h2>
+            </div>
+
+            <div class="modal-body">
+                <form id="donor-form">
+                    <input type="hidden" id="donor-id">
+                    
+                    <input type="text" id="donor-name" placeholder="Nome Completo" required>
+                    <input type="email" id="donor-email" placeholder="E-mail" required>
+                    <input type="number" id="donor-amount" placeholder="Valor da Doação (R$)" step="0.01" min="1" required>
+                    
+                    <button type="submit" id="save-button" class="btn">Cadastrar Doação</button>
+                </form>
+
+                <hr>
+                
+                <h3>Doações Realizadas (CRUD)</h3>
+                <div class="table-container">
+                    <table id="donors-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Valor (R$)</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+                
+                <button class="btn clear-btn" onclick="clearAllData()">Limpar Tudo</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 1. Defina a data final da contagem regressiva
+        // Ajuste esta data para o seu prazo final desejado! (0=Jan, 11=Dez)
+        const finalDate = new Date(2025, 11, 25, 0, 0, 0).getTime(); 
+        const countdownElement = document.querySelector('.countdown');
+        let interval;
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const difference = finalDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            if (difference < 0) {
+                // A contagem terminou
+                clearInterval(interval);
+                countdownElement.innerHTML = 'Tempo Esgotado!';
+                countdownElement.style.color = '#777';
+                return;
+            }
+
+            // 2. Cálculo e Formatação (Adiciona zero à esquerda)
+            const days = Math.floor(difference / day);
+            const hours = Math.floor((difference % day) / hour);
+            const minutes = Math.floor((difference % hour) / minute);
+            const seconds = Math.floor((difference % minute) / second);
+
+            const formatTime = (value) => String(value).padStart(2, '0');
+
+            // 3. Exibe o resultado no HTML
+            countdownElement.innerHTML = 
+                `${formatTime(days)}d - ${formatTime(hours)}h - ${formatTime(minutes)}m - ${formatTime(seconds)}s`;
+        }
+
+        // Inicia o contador
+        updateCountdown(); 
+        interval = setInterval(updateCountdown, 1000);
+        
+    </script>
+    
+    <script>
+        // Referências do DOM
+        const modal = document.getElementById('donation-modal');
+        const donationButtons = document.querySelectorAll('.btn');
+        const form = document.getElementById('donor-form');
+        const donorTableBody = document.querySelector('#donors-table tbody');
+        const saveButton = document.getElementById('save-button');
+        const donorIdInput = document.getElementById('donor-id');
+
+        let donors = []; // Array principal para armazenar os doadores
+
+        // =======================================================
+        // FUNÇÕES DE CONTROLE DO MODAL
+        // =======================================================
+
+        function openModal(event) {
+            if (event.target.textContent.includes('Fazer uma Doação')) {
+                event.preventDefault();
+            }
+            modal.style.display = 'flex';
+            modal.classList.add('open'); 
+            document.body.style.overflow = 'hidden'; 
+            
+            loadDonors();
+        }
+
+        function closeModal() {
+            modal.classList.remove('open');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; 
+                resetForm(); 
+            }, 300);
+        }
+        
+        // Anexa o evento de clique aos botões de doação
+        donationButtons.forEach(button => {
+            if (button.textContent.includes('Fazer uma Doação')) {
+                 button.addEventListener('click', openModal);
+            }
+        });
+
+        // Fechar modal ao clicar fora da área de conteúdo
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // =======================================================
+        // FUNÇÕES CRUD (Create, Read, Update, Delete)
+        // =======================================================
+
+        // READ: Carrega dados do localStorage e renderiza a tabela
+        function loadDonors() {
+            donors = JSON.parse(localStorage.getItem('donors')) || []; 
+            renderTable();
+        }
+
+        // CREATE / UPDATE: Salva os dados do formulário
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('donor-name').value;
+            const email = document.getElementById('donor-email').value;
+            const amount = parseFloat(document.getElementById('donor-amount').value).toFixed(2);
+            const id = donorIdInput.value;
+
+            if (id) {
+                // UPDATE
+                const index = donors.findIndex(d => d.id == id);
+                if (index !== -1) {
+                    donors[index] = { id, name, email, amount };
+                }
+            } else {
+                // CREATE
+                const newDonor = {
+                    id: Date.now(), 
+                    name,
+                    email,
+                    amount
+                };
+                donors.push(newDonor);
+            }
+
+            saveDonors(); 
+            resetForm();
+        });
+
+        // READ: Renderiza as linhas da tabela
+        function renderTable() {
+            donorTableBody.innerHTML = '';
+            if (donors.length === 0) {
+                donorTableBody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Nenhuma doação cadastrada localmente.</td></tr>';
+                return;
+            }
+
+            donors.forEach(donor => {
+                const row = donorTableBody.insertRow();
+                
+                row.insertCell().textContent = donor.name;
+                row.insertCell().textContent = `R$ ${donor.amount.replace('.', ',')}`; 
+
+                const actionsCell = row.insertCell();
+                
+                const editButton = document.createElement('button');
+                editButton.innerHTML = '✏️';
+                editButton.onclick = () => editDonor(donor.id);
+                actionsCell.appendChild(editButton);
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerHTML = '🗑️';
+                deleteButton.onclick = () => deleteDonor(donor.id);
+                actionsCell.appendChild(deleteButton);
+            });
+        }
+
+        // UPDATE: Preenche o formulário para edição
+        function editDonor(id) {
+            const donor = donors.find(d => d.id == id);
+            if (donor) {
+                document.getElementById('donor-name').value = donor.name;
+                document.getElementById('donor-email').value = donor.email;
+                document.getElementById('donor-amount').value = donor.amount;
+                donorIdInput.value = donor.id; 
+                saveButton.textContent = 'Salvar Alterações';
+            }
+        }
+
+        // DELETE: Remove um doador
+        function deleteDonor(id) {
+            if (confirm('Tem certeza que deseja excluir esta doação?')) {
+                donors = donors.filter(donor => donor.id != id); 
+                saveDonors();
+            }
+        }
+
+        // Persistência: Salva o array atual no localStorage
+        function saveDonors() {
+            localStorage.setItem('donors', JSON.stringify(donors));
+            renderTable(); 
+        }
+
+        // Utilitário: Limpa o formulário e retorna ao modo "Cadastrar"
+        function resetForm() {
+            form.reset();
+            donorIdInput.value = '';
+            saveButton.textContent = 'Cadastrar Doação';
+        }
+
+        // Utilitário: Limpa todos os dados do localStorage
+        function clearAllData() {
+            if (confirm('Tem certeza que deseja apagar TODOS os dados de doadores? Esta ação não pode ser desfeita.')) {
+                localStorage.removeItem('donors');
+                loadDonors(); 
+            }
+        }
+
+        // Inicialização: Carrega os dados quando a página carrega
+        document.addEventListener('DOMContentLoaded', loadDonors);
+    </script>
 
 </body>
 </html>
